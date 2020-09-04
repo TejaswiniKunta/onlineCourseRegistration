@@ -14,6 +14,7 @@ class CassandraConfig extends AbstractCassandraConfiguration {
     @Value("${spring.data.cassandra-keyspace}")
     private String keySpace;
 
+
     @Override
     protected String getKeyspaceName() {
         return keySpace;
