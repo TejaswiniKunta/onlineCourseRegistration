@@ -1,4 +1,4 @@
-package com.api.serviceImpl;
+package com.api.service.serviceImpl;
 
 import com.api.Exceptions.UserNotFoundException;
 import com.api.dto.LoginResponse;

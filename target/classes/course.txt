@@ -1,4 +1,4 @@
-curl -XPOST 'http://localhost:9200/onlinecourseregistration/_doc/CyhV1pt0WJVC0O86' -H 'Content-Type: application/json' -d '{"description": "IOT is",
+curl -XPOST 'http://localhost:9200/onlinecourseregistration/courses/CyhV1pt0WJVC0O86' -H 'Content-Type: application/json' -d '{"description": "IOT is",
  "courseId": "CyhV1pt0WJVC0O86",
 "courseName": "IOT:Internet of Things",
 "outcome": "Clear understanding of IOT and building an IOT project with sensors and hardware equipment",

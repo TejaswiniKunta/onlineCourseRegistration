@@ -6,6 +6,8 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.UUID;
 
@@ -15,12 +17,18 @@ public class Course implements Serializable {
     @Id
     @Field(type = FieldType.Keyword)
     private UUID courseId;
+    @NotNull
+    @NotEmpty
     @Field(type = FieldType.Text)
     private String courseName;
     @Field(type = FieldType.Text)
     private String description;
+    @NotNull
+    @NotEmpty
     @Field(type = FieldType.Text)
     private String instructor;
+    @NotNull
+    @NotEmpty
     @Field(type = FieldType.Integer)
     private int credits;
     @Field(type = FieldType.Integer)
