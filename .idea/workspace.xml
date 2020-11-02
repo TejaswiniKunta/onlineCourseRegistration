@@ -3,33 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e8d039c3-0472-45e2-9757-0758b7365d7f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/api/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/api/controller/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/repositories/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/api/repositories/CourseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/api/service/CourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/service/serviceImpl/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/api/service/serviceImpl/CourseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/service/serviceImpl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/api/service/serviceImpl/LoginServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/course.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/course.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/Exceptions/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/Exceptions/UserNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/config/CassandraConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/config/ElasticSearchConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/config/SwaggerConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/controller/CourseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/controller/UserLoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/dto/LoginResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/dto/UserLogin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/entity/Course.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/repositories/CourseRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/repositories/UserInfoRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/service/CourseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/service/LoginService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/service/serviceImpl/CourseServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/service/serviceImpl/LoginServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/course.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,25 +128,25 @@
       <screen x="0" y="23" width="1440" height="789" />
     </state>
     <state x="458" y="171" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.23.1440.789@0.23.1440.789" timestamp="1603478967832" />
-    <state width="1398" height="223" key="GridCell.Tab.0.bottom" timestamp="1603300528205">
+    <state width="1398" height="223" key="GridCell.Tab.0.bottom" timestamp="1604350343696">
       <screen x="0" y="23" width="1440" height="789" />
     </state>
-    <state width="1398" height="223" key="GridCell.Tab.0.bottom/0.23.1440.789@0.23.1440.789" timestamp="1603300528205" />
+    <state width="1398" height="223" key="GridCell.Tab.0.bottom/0.23.1440.789@0.23.1440.789" timestamp="1604350343696" />
     <state width="1398" height="225" key="GridCell.Tab.0.bottom/0.23.1440.793@0.23.1440.793" timestamp="1600361133120" />
-    <state width="1398" height="223" key="GridCell.Tab.0.center" timestamp="1603300528205">
+    <state width="1398" height="223" key="GridCell.Tab.0.center" timestamp="1604350343695">
       <screen x="0" y="23" width="1440" height="789" />
     </state>
-    <state width="1398" height="223" key="GridCell.Tab.0.center/0.23.1440.789@0.23.1440.789" timestamp="1603300528205" />
+    <state width="1398" height="223" key="GridCell.Tab.0.center/0.23.1440.789@0.23.1440.789" timestamp="1604350343695" />
     <state width="1398" height="225" key="GridCell.Tab.0.center/0.23.1440.793@0.23.1440.793" timestamp="1600361133119" />
-    <state width="1398" height="223" key="GridCell.Tab.0.left" timestamp="1603300528204">
+    <state width="1398" height="223" key="GridCell.Tab.0.left" timestamp="1604350343695">
       <screen x="0" y="23" width="1440" height="789" />
     </state>
-    <state width="1398" height="223" key="GridCell.Tab.0.left/0.23.1440.789@0.23.1440.789" timestamp="1603300528204" />
+    <state width="1398" height="223" key="GridCell.Tab.0.left/0.23.1440.789@0.23.1440.789" timestamp="1604350343695" />
     <state width="1398" height="225" key="GridCell.Tab.0.left/0.23.1440.793@0.23.1440.793" timestamp="1600361133119" />
-    <state width="1398" height="223" key="GridCell.Tab.0.right" timestamp="1603300528205">
+    <state width="1398" height="223" key="GridCell.Tab.0.right" timestamp="1604350343696">
       <screen x="0" y="23" width="1440" height="789" />
     </state>
-    <state width="1398" height="223" key="GridCell.Tab.0.right/0.23.1440.789@0.23.1440.789" timestamp="1603300528205" />
+    <state width="1398" height="223" key="GridCell.Tab.0.right/0.23.1440.789@0.23.1440.789" timestamp="1604350343696" />
     <state width="1398" height="225" key="GridCell.Tab.0.right/0.23.1440.793@0.23.1440.793" timestamp="1600361133120" />
     <state width="1398" height="249" key="GridCell.Tab.1.bottom" timestamp="1599177188925">
       <screen x="0" y="23" width="1440" height="793" />
