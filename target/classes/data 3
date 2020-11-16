@@ -1,0 +1,2 @@
+INSERT INTO  userlogin(username,accounttype,password) VALUES ('johnb2134','admin','mypassword');
+INSERT INTO  userlogin(username,accounttype,password) VALUES ('stevenm0012','student','mypassword');
