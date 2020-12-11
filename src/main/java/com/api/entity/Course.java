@@ -2,6 +2,7 @@ package com.api.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
+import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
@@ -13,6 +14,7 @@ import java.util.UUID;
 
 @Document(indexName = "onlinecourseregistration")
 @TypeAlias("courses")
+@UserDefinedType(value = "course")
 public class Course implements Serializable {
     @Id
     @Field(type = FieldType.Keyword)

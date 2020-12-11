@@ -19,11 +19,11 @@ import java.util.List;
 @Configuration
 public class ElasticSearchConfig {
 
-    @Value("${elasticsearch.clustername}")
+    @Value("$ {elasticsearch.clustername}")
     private String elasticSearchClusterName;
-    @Value("#{'${elasticsearch.host}'.split(',')}")
+    @Value("# {'$ {elasticsearch.host}'.split(',')}")
     private List<String> elasticSearchHost;
-    @Value("${elasticsearch.port}")
+    @Value("$ {elasticsearch.port}")
     private String elasticSearchPort;
 
 

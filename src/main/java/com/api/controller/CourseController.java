@@ -2,7 +2,6 @@ package com.api.controller;
 
 import com.api.entity.Course;
 import com.api.service.CourseService;
-import com.datastax.driver.mapping.annotations.QueryParameters;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;

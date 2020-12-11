@@ -1,0 +1,16 @@
+create type onlinecourseregistration.course(
+coursename text,
+courseid uuid,
+instructor text,
+description text,
+credits int,
+studentsenrolled int,
+classTime text,
+day text,
+handsOnVsLecture text
+);
+
+create table courseregistration(
+studentid int primary key,
+courses List<frozen<course>>
+);
