@@ -25,6 +25,7 @@ private CourseRegistrationRepository registrationRepository;
             throw new BadHttpRequest();
          } else {
            registrationRepository.save(courseList);
+           log.info("submission successful");
 
         }
         return courseList;

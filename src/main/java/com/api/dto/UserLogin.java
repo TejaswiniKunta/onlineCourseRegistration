@@ -1,13 +1,16 @@
 package com.api.dto;
 
+import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 
 @UserDefinedType
 public class UserLogin {
-    @PrimaryKey("username")
+
+    @Column("username")
     private String username;
     private String password;
+
 
     public String getUsername() {
         return username;
@@ -24,4 +27,5 @@ public class UserLogin {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

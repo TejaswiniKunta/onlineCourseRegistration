@@ -1,9 +1,10 @@
 package com.api.service;
 
 
+import com.api.dto.LoginResponse;
 import com.api.dto.UserLogin;
 
 public interface LoginService {
 
-    public String userAuth(UserLogin login);
+    public LoginResponse userAuth(UserLogin login);
 }

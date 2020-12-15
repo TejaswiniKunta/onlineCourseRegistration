@@ -40,8 +40,8 @@ public class CourseController {
             @ApiResponse(code = 500, message = "Internal server error"),
             @ApiResponse(code = 400, message = "bad request")
     })
-    public List<Course> getCourses() throws IOException{
-     return courseService.getCourses();
+    public List<Course> getCourses(@ApiParam(value = "provide student id",required = true) @RequestParam int studentId) throws IOException{
+     return courseService.getCourses(studentId);
     }
 
 }

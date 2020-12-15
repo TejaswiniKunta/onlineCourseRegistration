@@ -1,5 +1,6 @@
 package com.api.controller;
 
+import com.api.dto.LoginResponse;
 import com.api.dto.UserLogin;
 import com.api.service.LoginService;
 import io.swagger.annotations.*;
@@ -23,7 +24,7 @@ public class UserLoginController {
             @ApiResponse(code = 500, message = "Internal server error"),
             @ApiResponse(code = 401, message = "unauthorized")
     })
-    public String loginRequest(@ApiParam(value = "login details", required = true, name = "userLogin")
+    public LoginResponse loginRequest(@ApiParam(value = "login details", required = true, name = "userLogin")
                                    @RequestBody UserLogin login){
 
         return loginService.userAuth(login);

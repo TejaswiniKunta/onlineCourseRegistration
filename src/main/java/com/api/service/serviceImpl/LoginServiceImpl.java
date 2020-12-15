@@ -22,7 +22,7 @@ public class LoginServiceImpl implements LoginService {
     private UserInfoRepository repository;
 
     @Override
-    public String userAuth(UserLogin login)   {
+    public LoginResponse userAuth(UserLogin login)   {
         LoginResponse response = new LoginResponse();
         if(repository.findOneById(login.getUsername())==null) {
             throw new UserNotFoundException("incorrect login details");
@@ -33,7 +33,7 @@ public class LoginServiceImpl implements LoginService {
                 throw new UserNotFoundException("incorrect login details");
             }
         }
-        log.info(response.getAccountType());
-        return response.getAccountType();
+        log.info("accountType= "+ response.getAccountType() + " id= "+response.getId());
+        return response;
     }
 }

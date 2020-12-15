@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface CourseService {
     public Course createCourse(Course course);
-    public List<Course> getCourses();
+    public List<Course> getCourses(int studentId);
 }
