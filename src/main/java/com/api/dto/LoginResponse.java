@@ -10,6 +10,7 @@ public class LoginResponse extends UserLogin{
     @PrimaryKey("id")
     private int id;
 
+
     private String accountType;
 
     public int getId() {

@@ -1,5 +1,6 @@
 package com.api.controller;
 
+import com.api.Exceptions.CourseExistsExceptions;
 import com.api.entity.Course;
 import com.api.service.CourseService;
 import io.swagger.annotations.ApiOperation;
@@ -28,7 +29,7 @@ public class CourseController {
             @ApiResponse(code = 400, message = "bad request")
     })
     public Course createCourse(@ApiParam(value = "please fill in the details to create course", required = true, name = "course creation")
-                                   @RequestBody Course course) throws IOException {
+                                   @RequestBody Course course) throws CourseExistsExceptions {
         return courseService.createCourse(course);
     }
 

@@ -1,5 +1,6 @@
 package com.api.service.serviceImpl;
 
+import com.api.Exceptions.CourseExistsExceptions;
 import com.api.entity.Course;
 import com.api.entity.CourseRegistration;
 import com.api.repositories.CourseRegistrationRepository;
@@ -8,6 +9,8 @@ import com.api.service.CourseService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -21,9 +24,16 @@ public class CourseServiceImpl implements CourseService {
     @Autowired
     CourseRegistrationRepository registrationRepository;
     @Override
-    public Course createCourse(Course course) {
+    public Course createCourse(Course course) throws CourseExistsExceptions {
+
        UUID id = UUID.randomUUID();
             course.setCourseId(id);
+          Iterable<Course> courseIterator=  elasticsearchRepository.findAll();
+        for (Course c : courseIterator) {
+            if (c.getCourseName().equals(course.getCourseName())) {
+                throw new CourseExistsExceptions("Course already exists");
+            }
+        }
         elasticsearchRepository.save(course);
         return course;
     }

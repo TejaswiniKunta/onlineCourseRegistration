@@ -21,7 +21,7 @@ public class Course implements Serializable {
     private UUID courseId;
     @NotNull
     @NotEmpty
-    @Field(type = FieldType.Text)
+    @Field(type = FieldType.Text,name = "courseName")
     private String courseName;
     @Field(type = FieldType.Text)
     private String description;

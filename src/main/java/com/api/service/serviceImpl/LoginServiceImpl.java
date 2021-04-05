@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
 @Component
@@ -33,7 +33,11 @@ public class LoginServiceImpl implements LoginService {
                 throw new UserNotFoundException("incorrect login details");
             }
         }
-        log.info("accountType= "+ response.getAccountType() + " id= "+response.getId());
+        
+            log.info("accountType= "+ response.getAccountType() + " id= "+response.getId());
+
+
+
         return response;
     }
 }
