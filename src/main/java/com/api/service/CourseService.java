@@ -13,4 +13,5 @@ public interface CourseService {
     public List<Course> getCourses(int studentid);
     public void deleteCourse(UUID courseId);
     public List<Course> filterByWord(String word);
+    public Course updateCourse(Course course);
 }

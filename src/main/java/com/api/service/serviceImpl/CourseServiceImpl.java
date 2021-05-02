@@ -68,9 +68,21 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public void deleteCourse(UUID courseId) {
-
-        elasticsearchRepository.deleteById(courseId.toString());
+           elasticsearchRepository.deleteById(courseId.toString());
         log.info("successfully deleted");
+    }
+
+
+    @Override
+    public Course updateCourse(Course course){
+        Optional<Course> cc= elasticsearchRepository.findById(course.getCourseId().toString());
+        if(cc!=null && cc.get()!=null){
+            elasticsearchRepository.save(course);
+            log.info("successfully updates");
+        }
+
+
+        return course;
     }
 
     @Override

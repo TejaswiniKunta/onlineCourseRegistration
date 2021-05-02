@@ -60,6 +60,21 @@ public class CourseController {
      courseService.deleteCourse(courseId);
     }
 
+
+    @RequestMapping(value = "/course",method = RequestMethod.PUT)
+    @ApiOperation(value = "course update")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200,message = "UPDATED"),
+            @ApiResponse(code = 500, message = "Internal server error"),
+            @ApiResponse(code = 400, message = "bad request")
+
+    })
+    public Course updateCourses(@ApiParam(value = "provide modified course",required = true)
+                                @RequestBody Course course){
+        return courseService.updateCourse(course);
+    }
+
+
     @RequestMapping(value = "/courseByWord",method = RequestMethod.GET)
     @ApiOperation(value = "course list")
     @ApiResponses(value = {
