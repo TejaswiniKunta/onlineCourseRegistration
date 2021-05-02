@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -58,5 +59,19 @@ public class CourseController {
         @RequestParam UUID courseId){
      courseService.deleteCourse(courseId);
     }
+
+    @RequestMapping(value = "/courseByWord",method = RequestMethod.GET)
+    @ApiOperation(value = "course list")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200,message = "FETCHED"),
+            @ApiResponse(code = 500, message = "Internal server error"),
+            @ApiResponse(code = 400, message = "bad request")
+
+    })
+    public List<Course> getCoursesBasedOnWord(@ApiParam(value = "provide a word",required = true)
+                                                      @RequestParam String word){
+        return courseService.filterByWord(word);
+    }
+
 
 }

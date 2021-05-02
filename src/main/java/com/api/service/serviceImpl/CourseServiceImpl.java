@@ -8,11 +8,17 @@ import com.api.repositories.CourseRepository;
 import com.api.service.CourseService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static org.elasticsearch.index.query.QueryBuilders.matchPhraseQuery;
+import static org.elasticsearch.index.query.QueryBuilders.multiMatchQuery;
 
 @Slf4j
 @Service
@@ -62,7 +68,18 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public void deleteCourse(UUID courseId) {
+
         elasticsearchRepository.deleteById(courseId.toString());
         log.info("successfully deleted");
     }
+
+    @Override
+    public List<Course> filterByWord(String word){
+        NativeSearchQuery searchQuery = new NativeSearchQueryBuilder()
+                .withQuery(multiMatchQuery(word).field("courseName").field("description").field("instructor"))
+                .build();
+        Page<Course> courses = elasticsearchRepository.search(searchQuery);
+        return courses.getContent();
+    }
+
 }
