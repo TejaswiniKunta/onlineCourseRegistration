@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api")
@@ -43,6 +44,19 @@ public class CourseController {
     })
     public List<Course> getCourses(@ApiParam(value = "provide student id",required = true) @RequestParam int studentId) throws IOException{
      return courseService.getCourses(studentId);
+    }
+
+    @RequestMapping(value = "/course",method = RequestMethod.DELETE)
+    @ApiOperation(value = "course deletion")
+    @ApiResponses(value = {
+            @ApiResponse(code = 204,message = "DELETED"),
+            @ApiResponse(code = 500, message = "Internal server error"),
+            @ApiResponse(code = 400, message = "bad request")
+
+    })
+    public void deleteCourses(@ApiParam(value = "provide course id",required = true)
+        @RequestParam UUID courseId){
+     courseService.deleteCourse(courseId);
     }
 
 }

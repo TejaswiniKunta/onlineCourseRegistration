@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -25,16 +27,19 @@ private CourseRepository courseRepository;
 
     @Override
     public CourseRegistration submitRegistration(CourseRegistration courseList) throws BadHttpRequest {
-
-        if(courseList.getCourseList().size()>3){
-            throw new BadHttpRequest();
-         } else {
+        List<Course> newList = new ArrayList<>();
+        Optional<CourseRegistration> old= registrationRepository.findById(courseList.getStudentId());
+        if(old.isPresent() && old.get()!=null) {
+            newList.addAll(old.get().getCourseList());
+        }
+        newList.addAll(courseList.getCourseList());
+        courseList.setCourseList(newList);
            registrationRepository.save(courseList);
            log.info("submission successful");
           courseList.getCourseList().forEach(course -> {
               updateEnrolledStudents(course,courseList.getStudentId(),1);
           });
-        }
+
         return courseList;
     }
 

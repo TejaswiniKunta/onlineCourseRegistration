@@ -49,7 +49,7 @@ public class CourseServiceImpl implements CourseService {
             courses.add(course);
         });
         courseList = courses;
-           if(courseRegistration!=null){
+           if(courseRegistration!=null && courseRegistration.getCourseList()!=null){
               List<UUID> courseIds = new ArrayList<>();
               courseRegistration.getCourseList().forEach(c->{
                   courseIds.add(c.getCourseId());
@@ -58,5 +58,11 @@ public class CourseServiceImpl implements CourseService {
                }
 
         return courseList;
+    }
+
+    @Override
+    public void deleteCourse(UUID courseId) {
+        elasticsearchRepository.deleteById(courseId.toString());
+        log.info("successfully deleted");
     }
 }
