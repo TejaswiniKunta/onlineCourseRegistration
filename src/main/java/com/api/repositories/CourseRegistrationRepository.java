@@ -17,9 +17,5 @@ public interface CourseRegistrationRepository extends CassandraRepository<Course
  @Query("SELECT * FROM courseregistration WHERE studentid = ?0 ALLOW FILTERING")
 public CourseRegistration getCourses(int studentId);
 
- @Query("DELETE FROM courseregistration WHERE studentid=?0")
-  public void delete(int studentId);
-//
-// @Query("UPDATE courseregistration SET courses=?1 WHERE studentid=?0 ALLOW FILTERING")
-// public CourseRegistration updateCourse(int studentId, List<Course> courses);
+
 }

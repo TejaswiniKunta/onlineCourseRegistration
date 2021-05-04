@@ -3,7 +3,6 @@ package com.api.service;
 
 import com.api.Exceptions.CourseExistsExceptions;
 import com.api.entity.Course;
-import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.UUID;

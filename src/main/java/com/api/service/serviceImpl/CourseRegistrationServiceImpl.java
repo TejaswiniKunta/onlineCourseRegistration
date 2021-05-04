@@ -29,7 +29,7 @@ private CourseRepository courseRepository;
     public CourseRegistration submitRegistration(CourseRegistration courseList) throws BadHttpRequest {
         List<Course> newList = new ArrayList<>();
         Optional<CourseRegistration> old= registrationRepository.findById(courseList.getStudentId());
-        if(old.isPresent() && old.get()!=null) {
+        if(old!=null && old.isPresent() &&  old.get().getCourseList()!=null) {
             newList.addAll(old.get().getCourseList());
         }
         newList.addAll(courseList.getCourseList());
@@ -60,7 +60,14 @@ private CourseRepository courseRepository;
 
     @Override
     public void deleteCourseregistration(int studentId) {
-        registrationRepository.delete(studentId);
+        Optional<CourseRegistration> old = registrationRepository.findById(studentId);
+
+        old.get().getCourseList().forEach(c->{
+            updateEnrolledStudents(c,studentId,-1);
+
+        });
+        registrationRepository.deleteById(studentId);
+        log.info("deleted registration");
     }
 
     @Override
@@ -69,9 +76,12 @@ private CourseRepository courseRepository;
       if(!old.isPresent()){
          throw new IndexOutOfBoundsException();
       }
+        old.get().getCourseList().forEach(course -> {
+            updateEnrolledStudents(course,studentId,-1);
+        });
         registrationRepository.save(courseRegistration);
         courseRegistration.getCourseList().forEach(c->{
-            updateEnrolledStudents(c,studentId,-1);
+            updateEnrolledStudents(c,studentId,1);
         });
         return courseRegistration;
     }

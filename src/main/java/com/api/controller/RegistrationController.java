@@ -21,7 +21,7 @@ public class RegistrationController {
 
     @RequestMapping(value = "/registration/submit",method = RequestMethod.POST)
     @ResponseBody
-    @ApiOperation(value = "course registration")
+    @ApiOperation(value = "submit registration")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "created"),
             @ApiResponse(code = 500, message = "Internal server error"),
@@ -34,7 +34,7 @@ public class RegistrationController {
 
     @RequestMapping(value = "/registration",method = RequestMethod.GET)
     @ResponseBody
-    @ApiOperation(value = "get list of courses")
+    @ApiOperation(value = "view registration")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK"),
             @ApiResponse(code = 500, message = "Internal server error"),
@@ -47,7 +47,7 @@ public class RegistrationController {
 
     @RequestMapping(value = "/registration",method = RequestMethod.DELETE)
     @ResponseBody
-    @ApiOperation(value = "get list of courses")
+    @ApiOperation(value = "delete course registration")
     @ApiResponses(value = {
             @ApiResponse(code = 204, message = "DELETED"),
             @ApiResponse(code = 500, message = "Internal server error"),
